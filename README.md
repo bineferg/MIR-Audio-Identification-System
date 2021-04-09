@@ -45,7 +45,7 @@ Or
 > audioIdentification(/path/to/database/,/path/to/fingerprints/)
 ```
 
-**NOTE:** The default location for the database recordings is `'./database_recordings'` and the default location for query recordings is`'./query_recordings'`
+**NOTE:** The default location for the database recordings is `'./database_recordings'` and the default location for query recordings is`'./query_recordings'` niether of which is included in this repo.
 
 ## Evaluation
 
