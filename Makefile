@@ -1,9 +1,9 @@
 
 
-DB_REC_PATH ?= "./database_recordings"
-FP_PATH     ?= "./data"
-QUERY_PATH  ?= "./query_recordings"
-OUTPUT      ?= "output.txt"
+DB_REC_PATH ?= './database_recordings'
+FP_PATH     ?= './data'
+QUERY_PATH  ?= './query_recordings'
+OUTPUT      ?= 'output.txt'
 
 fingerprinter:
 	python3 -c "from fingerprint import fingerprintBuilder;fingerprintBuilder($(DB_REC_PATH), $(FP_PATH))"

@@ -23,14 +23,14 @@ DEFAULT_FS=22050
 NFFT=2048
 
 # Min amplitude to be considered a peak
-MIN_AMPLITUDE=10
+MIN_AMPLITUDE=5
 
 # Number of coordinates around an amplitude peak 
 # in the spectrogram
 NEIGHBOURHOOD=20
 
 # Plot flag
-plot = False
+plot = True
 
 # Number of bits to throw away from the front of the SHA1 hash in the
 # fingerprint calculation. 
@@ -121,9 +121,8 @@ def get_hashes(peaks):
 
                 # Check if that difference is within the rangee that it can still be considered a peak
                 if time_delta >= MIN_TIME_DELTA and time_delta <= MAX_TIME_DELTA:
-                    hash = hashlib.sha1(str(str(freq1) + str(freq2) + str(time_delta)).encode('utf-8'))
-
-                    hashes.append((hash.hexdigest()[0:FINGERPRINT_CUTOFF], t1))
+                    hash = hashlib.sha1("{0}{1}{2}".format(freq1, freq2, time_delta).encode('utf-8'))
+                    hashes.append((hash.hexdigest()[0:FINGERPRINT_CUTOFF], time_1))
 
     return hashes
 
